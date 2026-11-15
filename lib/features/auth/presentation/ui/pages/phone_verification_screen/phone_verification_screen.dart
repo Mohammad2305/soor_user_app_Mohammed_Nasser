@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_verification_code_field/flutter_verification_code_field.dart';
 import 'package:soor_user_app/core/extensions/main_app.dart';
@@ -7,12 +8,15 @@ import 'package:soor_user_app/core/extensions/strings.dart';
 import 'package:soor_user_app/core/routes/routes.dart';
 import 'package:soor_user_app/features/auth/presentation/ui/widgets/state_ask.dart';
 import 'package:soor_user_app/features/auth/presentation/ui/widgets/verification_app_bar.dart';
-import '../../../../../core/const/colors.dart';
-import '../../../../../core/themes/app_boxes_decoration.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/const/colors.dart';
+import '../../../../../../core/themes/app_boxes_decoration.dart';
+import '../../../../../../core/widgets/custom_button.dart';
+import '../../../manager/register/register_cubit.dart';
 
 class PhoneVerification extends StatelessWidget {
-  const PhoneVerification({super.key});
+  final String phoneNumber;
+
+  const PhoneVerification({super.key, required this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,7 @@ class PhoneVerification extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(
-                  "+966 000 000 00 00".firstCharacterUpper,
+                  phoneNumber,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
@@ -56,7 +60,7 @@ class PhoneVerification extends StatelessWidget {
             StateAsk(
               ask: "Didn't receive the code?",
               answer: "Resend",
-              onPressed: (){},
+              onPressed: () {},
             ),
             CustomButton(
               onTap: () {

@@ -40,6 +40,7 @@ class _PasswordInputState extends State<PasswordInput> {
           obscureText: isSecure,
           validator: widget.validator,
           style: AppTextStyles.textFtS14FW500,
+          cursorColor: Theme.of(context).colorScheme.onPrimary,
           decoration: InputDecoration(
             hintText: "*"*8,
             suffixIcon: InkWell(

@@ -39,6 +39,7 @@ class CustomInput extends StatelessWidget {
           controller: inputController,
           validator: validator,
           style: AppTextStyles.textFtS14FW500,
+          cursorColor: Theme.of(context).colorScheme.onPrimary,
           decoration: InputDecoration(
             hintText: hintText,
             suffixIcon: suffixIcon,
