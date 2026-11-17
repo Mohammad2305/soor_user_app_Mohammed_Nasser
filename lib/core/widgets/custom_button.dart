@@ -40,11 +40,11 @@ class CustomButton extends StatelessWidget {
           spacing: 5.w,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon ?? SizedBox.shrink(),
             Text(
               label,
               style: textStyle?.copyWith(color: textColor) ?? AppTextStyles.textFtS14FW500.copyWith(color: textColor),
             ),
+            icon ?? SizedBox.shrink(),
           ],
         ),
       ),

@@ -2,6 +2,9 @@
 // ignore_for_file: dangling_library_doc_comments, implementation_imports
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
+import 'package:lottie/src/lottie_builder.dart';
+import 'package:lottie/src/composition.dart';
 
 class Assets {
   Assets._();
@@ -12,7 +15,18 @@ class Assets {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  final String lDPlayer9Ens1001Ld = 'assets/images/LDPlayer9_ens_1001_ld.exe';
   final SvgGenImage appLogo = const SvgGenImage('assets/images/app_logo.svg');
+  final SvgGenImage emoji = const SvgGenImage('assets/images/emoji.svg');
+  final SvgGenImage group = const SvgGenImage('assets/images/group.svg');
+  final SvgGenImage logoIcon = const SvgGenImage('assets/images/logo_icon.svg');
+  final SvgGenImage single = const SvgGenImage('assets/images/single.svg');
+  final SvgGenImage successedOrder = const SvgGenImage(
+    'assets/images/successed_order.svg',
+  );
+  final SvgGenImage successful = const SvgGenImage(
+    'assets/images/successful.svg',
+  );
 }
 
 class AssetGenImage {

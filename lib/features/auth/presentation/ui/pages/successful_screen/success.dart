@@ -4,12 +4,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soor_user_app/core/const/assets.dart';
 import 'package:soor_user_app/core/extensions/paddings.dart';
 import 'package:soor_user_app/core/extensions/strings.dart';
-import '../../../../../core/const/colors.dart';
-import '../../../../../core/themes/app_boxes_decoration.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import 'package:soor_user_app/core/routes/routes.dart';
+import '../../../../../../core/const/colors.dart';
+import '../../../../../../core/themes/app_boxes_decoration.dart';
+import '../../../../../../core/widgets/custom_button.dart';
 
 class Success extends StatelessWidget {
-  const Success({super.key});
+  final String successText;
+
+  const Success({super.key, required this.successText});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +30,14 @@ class Success extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               Text(
-                "your account has been successfully created️"
-                    .firstCharacterUpper,
+                successText.firstCharacterUpper,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Spacer(),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.signIn);
+                },
                 padding: EdgeInsets.symmetric(vertical: 8.h),
                 decoration: AppBoxDecoration.general(AppColors.mainColor, 8.r),
                 textColor: Colors.white,

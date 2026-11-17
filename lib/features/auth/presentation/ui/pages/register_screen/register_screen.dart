@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:soor_user_app/core/extensions/main_app.dart';
 import 'package:soor_user_app/core/routes/routes.dart';
-import 'package:soor_user_app/features/auth/presentation/ui/pages/register_screen/widgets/register_form_bloc_listener.dart';
+import 'package:soor_user_app/features/auth/presentation/ui/pages/register_screen/widgets/register_form.dart';
 import '../../../../../../core/const/assets.dart';
 import '../../../../../../core/extensions/strings.dart';
 import '../../widgets/state_ask.dart';
@@ -29,7 +29,7 @@ class Register extends StatelessWidget {
                     .textTheme
                     .bodyLarge,
               ),
-              RegisterFormBlocListener(),
+              RegisterForm(),
               StateAsk(
                 ask: "do you already have an account?",
                 answer: "sign in",

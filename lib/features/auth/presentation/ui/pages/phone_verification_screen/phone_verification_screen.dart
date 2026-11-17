@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_verification_code_field/flutter_verification_code_field.dart';
 import 'package:soor_user_app/core/extensions/main_app.dart';
@@ -11,12 +10,16 @@ import 'package:soor_user_app/features/auth/presentation/ui/widgets/verification
 import '../../../../../../core/const/colors.dart';
 import '../../../../../../core/themes/app_boxes_decoration.dart';
 import '../../../../../../core/widgets/custom_button.dart';
-import '../../../manager/register/register_cubit.dart';
 
 class PhoneVerification extends StatelessWidget {
   final String phoneNumber;
+  final String screenName;
 
-  const PhoneVerification({super.key, required this.phoneNumber});
+  const PhoneVerification({
+    super.key,
+    required this.phoneNumber,
+    required this.screenName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +67,15 @@ class PhoneVerification extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                Navigator.pushNamed(context, AppRoutes.verificationSuccess);
+                if (screenName == AppRoutes.forgetPassword) {
+                  Navigator.pushNamed(context, AppRoutes.changePassword);
+                } else {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.success,
+                    arguments: "Your account has been created successfully.",
+                  );
+                }
               },
               padding: EdgeInsets.symmetric(vertical: 8.h),
               decoration: AppBoxDecoration.general(AppColors.mainColor, 8.r),

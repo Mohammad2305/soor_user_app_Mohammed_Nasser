@@ -12,6 +12,4 @@ class AppUser {
     required this.mobileNumber,
     this.orders = const [],
   });
-
-  static List<AppUser> usersList =[];
 }

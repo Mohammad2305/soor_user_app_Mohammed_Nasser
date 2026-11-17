@@ -14,8 +14,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  late bool isLogged;
+
   @override
   void initState() {
+    isLogged = false;
     super.initState();
     _navigateToOnboarding();
   }
@@ -23,10 +26,13 @@ class _SplashScreenState extends State<SplashScreen> {
   /// Handles the transition to the onboarding screen after a brief delay.
   Future<void> _navigateToOnboarding() async {
     await Future.delayed(Duration(seconds: MainAppConst.delaySplash));
+    setState(() {
+      isLogged = !isLogged;
+    });
     if (mounted) {
       Navigator.pushNamedAndRemoveUntil(
         context,
-        true
+        !isLogged
             ? AppRoutes.signIn
             : AppRoutes.layout,
             (_) => false,

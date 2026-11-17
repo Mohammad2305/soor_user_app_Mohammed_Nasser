@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:soor_user_app/core/extensions/strings.dart';
 import '../extensions/paddings.dart';
 import '../themes/app_text_styles.dart';
@@ -38,11 +39,14 @@ class _PasswordInputState extends State<PasswordInput> {
         TextFormField(
           controller: widget.inputController,
           obscureText: isSecure,
-          validator: widget.validator,
+          validator: FormBuilderValidators.compose([
+            ?widget.validator,
+            FormBuilderValidators.minLength(8)
+          ]),
           style: AppTextStyles.textFtS14FW500,
           cursorColor: Theme.of(context).colorScheme.onPrimary,
           decoration: InputDecoration(
-            hintText: "*"*8,
+            hintText: "* "*8,
             suffixIcon: InkWell(
               onTap: () {
                 setState(() {
