@@ -26,6 +26,6 @@ class OfferSection extends StatelessWidget {
           icon: Icon(Icons.arrow_forward),
         ).onlyPadding(top: 14.h),
       ],
-    );
+    ).symmetricPadding(horizontal: 15);
   }
 }
