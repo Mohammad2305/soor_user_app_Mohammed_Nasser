@@ -42,11 +42,13 @@ class ServicesSection extends StatelessWidget {
               svgImage: AppAssets.single,
               gradientColors: [AppColors.sweetHoney, AppColors.superBrown],
               label: "Individual",
+              diameter: 104,
             ),
             GradientCircle(
               svgImage: AppAssets.group,
               gradientColors: [AppColors.primary, AppColors.hiddenSapphire],
               label: "Occasions",
+              diameter: 104,
             ),
           ],
         ),

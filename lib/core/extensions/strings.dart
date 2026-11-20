@@ -1,4 +1,4 @@
-extension WidgetPadding on String{
+extension WidgetPadding on String {
   String get firstCharacterUpper {
     String result = this[0].toUpperCase();
     result += substring(1);
@@ -16,15 +16,26 @@ extension WidgetPadding on String{
   }
 
   String get characterLower {
-    return toLowerCase() ;
+    return toLowerCase();
   }
 
   String get titleCase {
     if (isEmpty) return this;
 
     return split(' ')
-        .map((word) =>
-    word.isEmpty ? word : word[0].toUpperCase() + word.substring(1))
+        .map(
+          (word) =>
+              word.isEmpty ? word : word[0].toUpperCase() + word.substring(1),
+        )
+        .join(' ');
+  }
+
+  String get capitalizeEveryWord {
+    return split(' ')
+        .map(
+          (word) =>
+              word.isEmpty ? word : word[0].toUpperCase() + word.substring(1),
+        )
         .join(' ');
   }
 }

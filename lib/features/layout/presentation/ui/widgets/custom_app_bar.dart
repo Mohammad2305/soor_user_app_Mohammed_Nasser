@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:soor_user_app/core/const/assets.dart';
 import 'package:soor_user_app/core/const/colors.dart';
-import 'package:soor_user_app/core/extensions/paddings.dart';
+import 'package:soor_user_app/core/extensions/strings.dart';
 import 'package:soor_user_app/core/themes/app_text_styles.dart';
 
-class ServicesAppBar extends StatelessWidget {
-  const ServicesAppBar({super.key});
+class CustomAppBar extends StatelessWidget {
+  final String appBarLabel;
+  const CustomAppBar({super.key, required this.appBarLabel});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class ServicesAppBar extends StatelessWidget {
       height: 58.h,
       color: AppColors.appBarColor,
       child: Text(
-        "services",
+        appBarLabel.firstCharacterUpper,
         style: AppTextStyles.textFtS16FW400,
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:soor_user_app/features/layout/presentation/ui/layouts/home/widgets/current_booking_section.dart';
+import 'package:soor_user_app/features/layout/presentation/ui/layouts/home/widgets/feedbacks_section.dart';
 import 'package:soor_user_app/features/layout/presentation/ui/layouts/home/widgets/offer_section.dart';
 import 'package:soor_user_app/features/layout/presentation/ui/layouts/home/widgets/services_section.dart';
 import 'widgets/layout_appbar.dart';
@@ -15,7 +17,9 @@ class HomeScreen extends StatelessWidget {
       children: [
         LayoutAppbar(),
         OfferSection(),
-        ServicesSection()
+        ServicesSection(),
+        CurrentBookingSection(),
+        FeedbacksSection(),
       ],
     );
   }
